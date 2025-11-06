@@ -1,0 +1,15 @@
+package com.demo;
+
+public abstract class Car {
+final public void color()
+{
+	System.out.println("Blue");
+}
+static public void brandname()
+{
+	System.out.println("Maruthi");
+}
+	public abstract void start();
+	public abstract void increasespeed();
+	public abstract void stop();
+}

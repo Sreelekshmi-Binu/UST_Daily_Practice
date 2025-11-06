@@ -1,0 +1,11 @@
+package com.bank;
+
+public class Customer3 extends Theater3 {
+	public static void main(String[] args) {
+		
+		Customer3 c3 = new Customer3();
+		c3.Theri();
+		c3.Thudarum();
+		c3.Maari();
+		c3.Lucifer();
+}

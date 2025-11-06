@@ -1,0 +1,5 @@
+package com.Int.ust.dao;
+
+public class AdministratorDao implement {
+
+}

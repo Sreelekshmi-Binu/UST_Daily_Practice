@@ -1,0 +1,27 @@
+package com.Int.ust.dao;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import com.Int.ust.bean.DoctorBean;
+import com.Int.ust.service.Administrator;
+
+public class AdministratorDao implements Administrator {
+ArrayList<DoctorBean> db ;
+	@Override
+	public String addDoctor(DoctorBean doctorbean) {
+		db = new ArrayList<DoctorBean>();
+		
+		
+		return "SUCCESS";
+		
+	}
+
+	@Override
+	public ArrayList<DoctorBean> viewAllDoctor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

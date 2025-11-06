@@ -1,0 +1,29 @@
+package com.example;
+
+import java.util.Scanner;
+
+public class Binary_decimal {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a number");
+		int binary = sc.nextInt();
+		int i=0;
+		int rem =0;
+		int decimal =0;
+		
+		
+		while(binary>0)
+		{
+			rem = binary%10;
+			decimal += rem*(int)Math.pow(2, i);
+			binary = binary/10;
+			i++;
+		}
+			
+		System.out.println(decimal);
+		
+	}
+
+	
+}

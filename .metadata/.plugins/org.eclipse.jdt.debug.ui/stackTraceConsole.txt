@@ -1,0 +1,13 @@
+String id = JOptionPane.showInputDialog("UserID");
+		String Fn = JOptionPane.showInputDialog("First Name");
+     	String DoB = JOptionPane.showInputDialog("Date Of Birth");
+		String G = JOptionPane.showInputDialog("Gender");
+		String st = JOptionPane.showInputDialog("Street");
+        String loc = JOptionPane.showInputDialog("Location");
+        String ci = JOptionPane.showInputDialog("City");
+        String sta = JOptionPane.showInputDialog("State");
+        String pin = JOptionPane.showInputDialog("PIN Code");
+        String mob = JOptionPane.showInputDialog("Mobile Number");
+        String mail = JOptionPane.showInputDialog("Email");
+        String spec = JOptionPane.showInputDialog("Specification");
+        int exp= Integer.parseInt(JOptionPane.showInputDialog("Enter Experience"));

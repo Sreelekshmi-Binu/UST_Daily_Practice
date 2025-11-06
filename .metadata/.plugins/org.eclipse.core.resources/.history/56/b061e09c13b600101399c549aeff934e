@@ -1,0 +1,30 @@
+package outer;
+
+import java.util.Scanner;
+
+public class Multi_dimen {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	int arr[][] = new int[2][3];
+	System.out.println("enter the numbers.. ");
+	for(int i=0;i<2;i++)
+	{
+		for(int j=0;i<3;j++)
+		{
+			arr[i][j]= sc.nextInt();
+		}
+	}
+			System.out.println("the entered marks are..");
+			for(int x=0;x<2;x++)
+				{
+				for(int y=0;y<3;y++)
+				{
+					System.out.print(arr[x][y]);
+				
+				}
+				System.out.println();
+				}
+				}
+	}
+}
+}

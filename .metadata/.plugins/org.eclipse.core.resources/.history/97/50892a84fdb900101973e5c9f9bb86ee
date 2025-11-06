@@ -1,0 +1,20 @@
+package com.example;
+
+import java.util.ArrayList;
+import java.util.Stack;
+
+public class Array_list {
+	public static void main(String[] args) {
+		Stack al = new Stack();
+		al.add("Hello");
+		al.add(45);
+		al.add("World");
+		al.add(30);
+		al.set(1, "hi");
+		al.remove(1);
+		System.out.println(al.pop());
+		System.out.println(al);
+		System.out.println(al.get(1));
+	}
+
+}

@@ -1,0 +1,15 @@
+package com.Int.ust.ui;
+
+import javax.swing.*;
+
+public class LoginUI {
+public static void main(String[] args) {
+	String Id=JOptionPane.showInputDialog("Enter Username");
+	String Password=JOptionPane.showInputDialog("Enter Password");
+	if(Id=="AD-001" && Password =="AD-001")
+	{
+		JOptionPane.showMessageDialog(null,"Password is correct");
+		
+	}
+}
+}

@@ -1,0 +1,11 @@
+package com.eg;
+
+public class User {
+public static void main(String[] args) {
+	Employee e = new Employee(100, "sreelekshmi", 350000);
+//	e.setEmpid(001);
+//	e.setEmpname("Sreelekshmi");
+//	e.setEmpsal(35000);
+//	System.out.println(e);
+}
+}

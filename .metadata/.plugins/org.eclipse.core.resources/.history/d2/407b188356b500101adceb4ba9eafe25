@@ -1,0 +1,19 @@
+package com.example;
+import java.util.Scanner;
+public class Decimal_Binary {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a number");
+		int num = sc.nextInt();
+		String binary="";
+		do
+		{
+			int rem = num%2;
+			binary = rem + binary;
+			num = num/2;
+			
+		}
+		while(num==1);
+	}
+

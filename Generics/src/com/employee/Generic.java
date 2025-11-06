@@ -1,0 +1,30 @@
+package com.employee;
+
+import java.util.ArrayList;
+
+public class Generic {
+	public static void main(String[] args) {
+		Employee e1= new Employee();
+		Employee e2 = new Employee();
+		Employee e3 = new Employee();
+		e1.setEmpname("Sreelekshmi");
+		e1.setEmpsal(35000);
+		e1.setId(201);
+		e2.setEmpname("emp2");
+		e2.setEmpsal(30000);
+		e2.setId(202);
+		e3.setEmpname("emp3");
+		e3.setEmpsal(33000);
+		e3.setId(200);
+		ArrayList<Employee> al = new ArrayList<Employee>();
+		al.add(e1);
+		al.add(e2);
+		al.add(e3);
+		for(Employee e:al)
+		{
+			System.out.println(e);
+		}
+		
+	}
+
+}

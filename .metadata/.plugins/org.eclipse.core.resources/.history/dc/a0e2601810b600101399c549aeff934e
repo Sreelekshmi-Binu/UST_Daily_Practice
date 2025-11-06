@@ -1,0 +1,40 @@
+package outer;
+import java.util.Scanner;
+public class Arrdemo {
+public static void main(String[] args) {
+	int marks[]= {1,2,3,4,5};
+	for(int i=0;i<marks.length;i++)
+	{
+		System.out.println(marks[i]);
+	}
+
+	System.out.println("object method....");
+for(int m:marks)
+{
+	System.out.println(m);
+}
+ int marks1[]= new int[5];
+ Scanner sc = new Scanner(System.in);
+ System.out.println("enter 5 marks");
+ int count =0;
+ for(int i=0;i<5;i++)
+ {
+	 marks1[i]=sc.nextInt();
+	 if(marks[i]<40)
+	 {
+		 count = count +1;
+	 }
+	 if(count == 2)
+	 {
+		 break;
+	 }
+ }
+ /*int sum =0;
+ for(int j=0;j<5;j++)
+ {
+	 sum = sum + marks1[j];
+ }
+ float avg = sum/5;
+ System.out.println("average " +avg);
+}
+}

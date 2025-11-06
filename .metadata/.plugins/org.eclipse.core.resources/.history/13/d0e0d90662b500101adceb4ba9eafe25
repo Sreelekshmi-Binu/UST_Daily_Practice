@@ -1,0 +1,89 @@
+package com.example;
+
+import java.util.Scanner;
+
+public class Binary_Hexadecimal {
+
+public static void main(String[] args) {
+
+Scanner sc = new Scanner(System.in);
+
+System.out.println("enter a number");
+
+int binary = sc.nextInt();
+
+int i=0;
+
+int r = 0;
+
+int a=0;
+
+while(binary>0)
+
+{
+
+r= binary%10;
+
+a += r*(int)Math.pow(2,i);
+
+binary = binary/10;
+
+i++;
+
+}
+
+int n=a/16;
+
+int rem = a % 16;
+
+String s="";
+
+s=s+n;
+
+if(rem==10) {
+
+s=s+'A';
+
+}
+
+else if(rem==11) {
+
+s=s+'B';
+
+}
+
+else if(rem==12) {
+
+s=s+'C';
+
+}
+
+else if(rem==13) {
+
+s=s+'D';
+
+}
+
+else if(rem==14) {
+
+s=s+'E';
+
+}
+
+else if(rem==15) {
+
+s=s+'F';
+
+}
+
+else {
+
+s=s+rem;
+
+}
+
+System.out.println(s);	
+
+}
+
+}

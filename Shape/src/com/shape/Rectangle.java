@@ -1,0 +1,26 @@
+package com.shape;
+
+public class Rectangle implements Shape{
+
+	@Override
+	public void draw() {
+		System.out.println("Draw Shape Rectangle...");
+		
+	}
+	void side()
+	{
+		System.out.println("has 4 sides..");
+	}
+	public static void main(String[] args) {
+		Shape r = new Rectangle();
+		Rectangle r1 = new Rectangle();
+		r.draw();
+		//r.side(); won't access
+		r1.side();
+		
+		
+	}
+
+
+
+}

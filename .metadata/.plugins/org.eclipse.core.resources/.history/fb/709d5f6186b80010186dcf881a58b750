@@ -1,0 +1,12 @@
+package outer;
+
+public class Over_loading {
+	void add(int a, int b)
+	{
+		System.out.println("sum");
+	}
+int add(int a, int b, int c)
+{
+return a+b+c;	
+}
+}

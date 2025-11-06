@@ -1,0 +1,21 @@
+package com.example;
+import java.util.*;
+
+public class Array_list {
+	public static void main(String[] args) {
+		//ArrayList al = new ArrayList();
+		//Stack al = new Stack();
+		LinkedList al = new LinkedList();
+		al.add("Hello");
+		al.add(45);
+		al.add("World");
+		al.add(30);
+		al.set(1, "hi");
+		al.remove(1);
+		System.out.println(al.pop());
+		System.out.println(al);
+		System.out.println(al.get(1));
+		System.out.println(al.contains("Apple"));
+	}
+
+}

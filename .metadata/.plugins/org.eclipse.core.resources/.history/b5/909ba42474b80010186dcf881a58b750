@@ -1,0 +1,29 @@
+package com.example;
+class Ar
+{
+	Ar()
+	{
+		System.out.println("default Ar");
+	}
+}
+class Br extends Ar{
+	Br()
+	{
+		System.out.println("Default B");
+	 }
+}
+class C extends Br
+{
+	C()
+	{
+		System.out.println("Default C");
+		
+	}
+}
+public class Superr extends C {
+	
+public static void main(String[] args) {
+	new Superr();
+	
+}
+}

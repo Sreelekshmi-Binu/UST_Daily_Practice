@@ -1,0 +1,19 @@
+package com.example;
+class A
+{ 
+	A(int x)
+	{
+		System.out.println("A class constructor..");
+	}
+}
+public class B extends A{
+	B()
+	{ 
+		super(5);
+		System.out.println("B class constructor...");
+	}
+	public static void main(String[] args) {
+		B o= new B();  //new B(); just this also creates object
+	} 
+
+}

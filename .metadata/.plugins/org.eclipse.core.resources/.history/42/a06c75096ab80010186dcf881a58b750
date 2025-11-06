@@ -1,0 +1,12 @@
+package outer;
+
+public class Over_loading {
+	void add(int a, int b)
+	{
+		
+	}
+void add(int a, int b, int c)
+{
+	
+}
+}

@@ -1,0 +1,49 @@
+package com.example;
+
+import java.util.Scanner;
+
+public class Binary_Hexadecimal {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enter a number");
+		int binary = sc.nextInt();
+		int i=0;
+		int rem =0;
+		int decimal =0;
+		
+		
+		while(binary>0)
+		{
+			rem = binary%10;
+			decimal += rem*(int)Math.pow(2, i);
+			binary = binary/10;
+			i++;
+		}
+			String Hexa ="";
+	 while(decimal>0)
+	 {
+		 int remainder = decimal%16;
+		 switch(remainder)
+		 {
+			 case 10 : Hexa = Hexa+'A';
+			 			break;
+			 case 11: Hexa = Hexa+'B';
+	 					break;
+			 case 12: Hexa = Hexa+'C';
+	 					break;
+			 case 13: Hexa = Hexa+'D';
+	 					break;
+			 case 14: Hexa = Hexa+'E';
+	 					break;
+			 case 15: Hexa = Hexa+'F';
+	 					break;
+			 default: Hexa = Hexa + remainder;
+			 			 break;
+		 }
+		 decimal = decimal/10;
+	 }
+	 System.out.println(Hexa);
+	}
+		
+}

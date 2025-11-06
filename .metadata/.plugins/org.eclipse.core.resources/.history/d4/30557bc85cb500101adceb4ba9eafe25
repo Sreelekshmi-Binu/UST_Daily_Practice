@@ -1,0 +1,24 @@
+package com.example;
+
+import java.util.Scanner;
+
+public class Binary_Hexadecimal {
+
+	Scanner sc = new Scanner(System.in);
+	System.out.println("enter a number");
+	int binary = sc.nextInt();
+	int i=0;
+	int rem =0;
+	int hexadecimal =0;
+	
+	
+	while(binary>0)
+	{
+		rem = binary%10;
+		hexadecimal += rem*(int)Math.pow(16, i);
+		binary = binary/10;
+		i++;
+	}
+		
+	System.out.println(decimal);
+}

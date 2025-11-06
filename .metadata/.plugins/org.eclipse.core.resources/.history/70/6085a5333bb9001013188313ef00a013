@@ -1,0 +1,30 @@
+package com.demo;
+
+public class Driver extends Car {
+
+	@Override
+	public void start() {
+		System.out.println("used to start car");
+		
+	}
+
+	@Override
+	public void increasespeed() {
+		System.out.println("Used to increase speed");
+		
+	}
+
+	@Override
+	public void stop() {
+		System.out.println("used to stop car");
+		
+	}
+	public static void main(String[] args) {
+		Driver d = new Driver();
+		d.color();
+		d.brandname();
+		d.increasespeed();
+		d.stop();
+	}
+
+}

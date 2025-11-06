@@ -1,0 +1,6 @@
+package com.bank;
+
+public interface Tamil_Movies {
+	public void Theri();
+	public void Maari();
+	}

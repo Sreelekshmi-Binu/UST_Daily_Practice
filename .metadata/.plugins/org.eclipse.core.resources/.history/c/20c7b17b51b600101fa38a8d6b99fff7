@@ -1,0 +1,56 @@
+package outer;
+import java.util.Scanner;
+public class Product_array
+{
+	int prdno;
+	String prdname;
+	int prdprice;
+	static Product_array[] ps= new Product_array[3];
+	void prdname_change(String name,String new_name)
+	{
+		if(this.prdname.equals(name))
+				{
+			this.prdname=new_name;
+		}
+		
+	}
+	void prdname_delete(String name)
+	{
+		if(this.prdname!=null&& this.prdname.equals(name)) {
+			this.prdname=null;
+			this.prdno=0;
+			this.prdprice=0;
+		}
+		
+	}
+	void prdname_display()
+	{
+		for(int i=0;i<2;i++)
+		{
+		System.out.println(ps[i].prdname);
+		}
+	}
+	public static void main(String[] args) {
+		//Product_array[] ps= new Product_array[3];
+		Product_array pa = new Product_array();
+		Scanner sc = new Scanner(System.in);
+		for(int i=0;i<2;i++)
+		{
+			ps[i]= new Product_array();
+			System.out.println("enter product no..");
+			ps[i].prdno= sc.nextInt();
+			System.out.println("enter product name..");
+			ps[i].prdname = sc.next();
+			System.out.println("enter product price...");
+			ps[i].prdprice = sc.nextInt();
+		}
+		for(int i=0;i<2;i++)
+		{
+		ps[i].prdname_change("Shampoo","Handwash");
+		}
+		pa.prdname_display();
+
+		
+		
+	}
+}

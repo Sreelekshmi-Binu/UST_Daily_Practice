@@ -1,0 +1,29 @@
+package com.example;
+class A
+{
+	A()
+	{
+		System.out.println("default A");
+	}
+}
+class B extends A{
+	B()
+	{
+		System.out.println("Default B");
+	 }
+}
+class C extends B
+{
+	C()
+	{
+		System.out.println("Default C");
+		
+	}
+}
+public class Superr extends C {
+	
+public static void main(String[] args) {
+	new Superr();
+	
+}
+}
