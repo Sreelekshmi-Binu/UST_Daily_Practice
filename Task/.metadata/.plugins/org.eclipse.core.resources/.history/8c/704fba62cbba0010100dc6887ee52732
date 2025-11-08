@@ -1,0 +1,13 @@
+package com.Payment;
+
+public class PaymentProtal {
+	public void makePayment(Payment p, double amount )
+	{
+		System.out.println("The payment is:"+p);
+		System.out.println("The amount is: "+amount);
+	}
+	public static void main(String[] args) {
+		
+ PaymentProtal p = new PaymentProtal();
+
+}}

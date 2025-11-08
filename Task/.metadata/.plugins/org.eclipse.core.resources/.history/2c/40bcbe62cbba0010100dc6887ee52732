@@ -1,0 +1,12 @@
+package com.Payment;
+
+public class VisaPayment implements CreditCardPayment
+{
+
+	@Override
+	public void ProcessPayment(double amount) {
+		System.out.println("The amount is "+amount);
+		
+	}
+
+}

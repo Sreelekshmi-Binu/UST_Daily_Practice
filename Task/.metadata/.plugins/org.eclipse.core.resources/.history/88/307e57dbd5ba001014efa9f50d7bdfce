@@ -1,0 +1,63 @@
+package com.bank;
+
+import java.util.Scanner;
+
+public class BankAccount {
+	private String AccountNo;
+	private int Pin = 2314;
+	private float Balance=0;
+	//int currentbalance=0;
+	public String getAccountNo() {
+		return AccountNo;
+	}
+	public void setAccountNo(String accountNo) {
+		AccountNo = accountNo;
+	}
+	public int getPin() {
+		return Pin;
+	}
+	public void setPin(int pin) {
+		Pin = pin;
+	}
+	public float getBalance() {
+		return Balance;
+	}
+	public void setBalance(float balance) {
+		Balance = balance;
+	}
+	void deposit()
+	{
+		
+	}
+	public static void main(String[] args) {
+		System.out.println("choose an operation: 1.Deposit, 2.Withdrwal, 3.Balance");
+		Scanner sc= new Scanner(System.in);
+		String c = sc.next();
+		System.out.println("Enter your pin");
+		int p = sc.nextInt(); 
+		BankAccount account = new BankAccount();
+		if(p== account.getPin())
+		switch(c)
+		{
+		case "1":
+		    System.out.println("Enter amount to deposit:");
+		    int amount1 = sc.nextInt();
+		    float newBalance = account.getBalance() + amount1;
+		    account.setBalance(newBalance);
+		    System.out.println("Deposit successful. New balance: ₹" + account.getBalance());
+		    break;
+
+		case "2":
+		    System.out.println("Enter amount to withdraw:");
+		    int amount2 = sc.nextInt();
+		    if (amount2 <= account.getBalance()) {
+		        account.setBalance(account.getBalance() - amount2);
+		        System.out.println("Withdrawal successful. Remaining balance: ₹" + account.getBalance());
+		    } else {
+		        System.out.println("Insufficient balance.");
+		    }
+		    break;
+			
+		}
+	}
+}

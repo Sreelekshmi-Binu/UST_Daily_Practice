@@ -1,0 +1,45 @@
+package com.person;
+
+ public class Person {
+	Person()
+	{
+		System.out.println("Details of person...");
+	}
+	void DisplayDetails()
+	{
+		System.out.println("The details of the person are..");
+		System.out.println("Name: "+empname);
+		System.out.println("Age:" +age);
+		System.out.println("Salary: "+salary);
+		
+	}
+
+	 class Employee extends Person{
+		 
+		 super.empname("Rohit");
+			super.salary(32000);
+			super.age(23);
+			System.out.println("The details of the person are..");
+			System.out.println("Name: "+empname);
+			System.out.println("Age:" +age);
+			System.out.println("Salary: "+salary);
+	}
+	 class Manager extends Employee
+	{
+		 
+	super.empname("Sreelekshmi");
+	super.salary(35000);
+	super.age(22);
+	System.out.println("The details of the person are..");
+	System.out.println("Name: "+empname);
+	System.out.println("Age:" +age);
+	System.out.println("Salary: "+salary);
+	}
+	
+		
+	public static void main(String[] args) {
+		Manager m = new Manager();
+
+	}
+
+}

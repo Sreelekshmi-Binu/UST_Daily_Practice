@@ -1,0 +1,78 @@
+import java.util.Scanner;
+
+public class VehicleRentalSystem {
+
+    // Base class for all vehicles (non-public class)
+    static class Vehicle {
+        // Method to calculate rental cost (takes one parameter: days)
+        public void calculateRentalCost(int days) {
+            // This method is meant to be overridden by subclasses
+        }
+    }
+
+    // Subclass for Truck1 (non-public class)
+    static class Truck1 extends Vehicle {
+        // Truck1-specific cost per day
+        public void calculateRentalCost(int days) {
+            int costPerDay = 500;  // Cost per day for Truck1 is 500
+            int totalCost = costPerDay * days;  // Calculate total cost for the rental period
+            System.out.println("For " + days + " days, the rental cost for Truck1 is " + totalCost + " Rs");
+        }
+    }
+
+    // Subclass for Car1 (non-public class)
+    static class Car1 extends Vehicle {
+        // Car1-specific cost per day
+        public void calculateRentalCost(int days) {
+            int costPerDay = 350;  // Cost per day for Car1 is 350
+            int totalCost = costPerDay * days;  // Calculate total cost for the rental period
+            System.out.println("For " + days + " days, the rental cost for Car1 is " + totalCost + " Rs");
+        }
+    }
+
+    // Subclass for Bike1 (non-public class)
+    static class Bike1 extends Vehicle {
+        // Bike1-specific cost per day
+        public void calculateRentalCost(int days) {
+            int costPerDay = 200;  // Cost per day for Bike1 is 200
+            int totalCost = costPerDay * days;  // Calculate total cost for the rental period
+            System.out.println("For " + days + " days, the rental cost for Bike1 is " + totalCost + " Rs");
+        }
+    }
+
+    // Main method to run the vehicle rental system
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Display welcome message
+        System.out.println("...WELCOME TO RENTAL...");
+
+        // Ask the user to choose the type of vehicle
+        System.out.println("Enter the vehicle type (1 for Truck1, 2 for Car1, 3 for Bike1): ");
+        int vehicleType = sc.nextInt();
+
+        // Ask how many days the vehicle is required
+        System.out.println("For how many days do you want the vehicle?");
+        int days = sc.nextInt();
+
+        // Create the appropriate vehicle object based on user input
+        Vehicle vehicle = null;
+        switch (vehicleType) {
+            case 1:
+                vehicle = new Truck1();  // Create Truck1 object
+                break;
+            case 2:
+                vehicle = new Car1();  // Create Car1 object
+                break;
+            case 3:
+                vehicle = new Bike1();  // Create Bike1 object
+                break;
+            default:
+                System.out.println("Invalid vehicle type.");
+                System.exit(0);  // Exit the program if the input is invalid
+        }
+
+        // Calculate the rental cost for the chosen vehicle
+        vehicle.calculateRentalCost(days);  // Call the method to calculate rental cost
+    }
+}

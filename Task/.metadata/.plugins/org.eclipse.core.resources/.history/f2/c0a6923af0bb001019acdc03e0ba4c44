@@ -1,0 +1,62 @@
+package com.vehicle;
+
+import java.util.Scanner;
+
+public class VehicleRentalSystem {
+    static class Vehicle {
+        public void calculateRentalCost(int days) {
+      
+        }
+    }
+     class Truck1 extends Vehicle {
+        
+        public void calculateRentalCost(int days) {
+            int costPerDay = 500;  
+            int totalCost = costPerDay * days;  // Calculate total cost for the rental period
+            System.out.println("For " + days + " days, the rental cost for Truck1 is " + totalCost + " Rs");
+        }
+    }
+    static class Car1 extends Vehicle {
+       
+        public void calculateRentalCost(int days) {
+            int costPerDay = 350;  
+            int totalCost = costPerDay * days;  
+            System.out.println("For " + days + " days, the rental cost for Car1 is " + totalCost + " Rs");
+        }
+    }
+
+    
+    static class Bike1 extends Vehicle {
+        public void calculateRentalCost(int days) {
+            int costPerDay = 200;  
+            int totalCost = costPerDay * days;  
+            System.out.println("For " + days + " days, the rental cost for Bike1 is " + totalCost + " Rs");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("...WELCOME TO RENTAL...");
+        System.out.println("Enter the vehicle type (1 for Truck1, 2 for Car1, 3 for Bike1): ");
+        int vehicleType = sc.nextInt();
+        System.out.println("For how many days do you want the vehicle?");
+        int days = sc.nextInt();
+        Vehicle vehicle = null;
+        switch (vehicleType) {
+            case 1:
+                vehicle = new Truck1();  // Truck1 object
+                break;
+            case 2:
+                vehicle = new Car1();  // Car1 object
+                break;
+            case 3:
+                vehicle = new Bike1();  //  Bike1 object
+                break;
+            default:
+                System.out.println("Invalid vehicle type.");
+                break;
+        }
+
+       
+        vehicle.calculateRentalCost(days);  //  method to calculate rental cost
+    }
+}

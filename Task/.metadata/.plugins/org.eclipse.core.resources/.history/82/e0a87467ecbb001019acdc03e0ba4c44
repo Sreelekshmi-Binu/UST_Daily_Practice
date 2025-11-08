@@ -1,0 +1,43 @@
+package com.vehicle;
+
+import java.util.Scanner;
+
+// Base class for all vehicles
+public class Vehicle {
+    
+    public void calculateRentalCost(int days, int costPerDay) {
+        int cost = costPerDay * days;
+        System.out.println("For " + days + " days, the rental cost is " + cost + " Rs");
+    }
+}
+
+class Truck1 extends Vehicle {
+ 
+    public void calculateRentalCost(int days) {
+        super.calculateRentalCost(days, 500); // Cost per day for truck1 is 500
+    }
+}
+
+// Subclass for Car1
+class Car1 extends Vehicle {
+    // Car1-specific cost per day
+    public void calculateRentalCost(int days) {
+        super.calculateRentalCost(days, 350); // Cost per day for car1 is 350
+    }
+}
+
+// Subclass for Bike1
+class Bike1 extends Vehicle {
+    // Bike1-specific cost per day
+    public void calculateRentalCost(int days) {
+        super.calculateRentalCost(days, 200); // Cost per day for bike1 is 200
+    }
+}
+
+// Subclass for Van1 (New Vehicle Type)
+class Van1 extends Vehicle {
+    // Van1-specific cost per day
+    public void calculateRentalCost(int days) {
+        super.calculateRentalCost(days, 400); // Cost per day for van1 is 400
+    }
+}

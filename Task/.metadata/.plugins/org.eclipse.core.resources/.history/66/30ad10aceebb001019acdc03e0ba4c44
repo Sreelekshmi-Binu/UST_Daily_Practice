@@ -1,0 +1,12 @@
+package com.vehicle;
+
+import java.util.Scanner;
+
+// Base class for all vehicles
+public class Vehicle {
+    // Method to calculate rental cost
+    public void calculateRentalCost(int days, int costPerDay) {
+        int cost = costPerDay * days;
+        System.out.println("For " + days + " days, the rental cost is " + cost + " Rs");
+    }
+}

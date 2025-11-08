@@ -1,0 +1,21 @@
+package com.vehicle;
+
+import java.util.Scanner;
+
+public class Bike extends Vehicle{
+	public	void CalculateRentalCost(int day)
+		{
+			super.CalculateRentalCost(day);
+			int cost = 200 * day;
+			System.out.println("For "+day +" days its " +cost+"Rs");
+		}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("...WELCOME TO RENTAL...");
+		System.out.println("For how manys days do u want...");
+		int day = sc.nextInt();
+		Bike b = new Bike();
+		b.CalculateRentalCost(day);
+	}
+
+}

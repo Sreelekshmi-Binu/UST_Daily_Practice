@@ -1,0 +1,43 @@
+package com.vehicle;
+
+import java.util.Scanner;
+
+public class VehicleRentalSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Display welcome message
+        System.out.println("...WELCOME TO RENTAL...");
+
+        // Ask the user to choose the type of vehicle
+        System.out.println("Enter the vehicle type (1 for Truck1, 2 for Car1, 3 for Bike1, 4 for Van1): ");
+        int vehicleType = sc.nextInt();
+
+        // Ask how many days the vehicle is required
+        System.out.println("For how many days do you want the vehicle?");
+        int days = sc.nextInt();
+
+        // Create the appropriate vehicle object based on user input
+        Vehicle vehicle = null;
+        switch (vehicleType) {
+            case 1:
+                vehicle = new Truck1(); // Create Truck1 object
+                break;
+            case 2:
+                vehicle = new Car1(); // Create Car1 object
+                break;
+            case 3:
+                vehicle = new Bike1(); // Create Bike1 object
+                break;
+            case 4:
+                vehicle = new Van1(); // Create Van1 object
+                break;
+            default:
+                System.out.println("Invalid vehicle type.");
+                System.exit(0);
+        }
+
+       
+
+    }
+}

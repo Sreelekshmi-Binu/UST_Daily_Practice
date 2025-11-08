@@ -1,0 +1,69 @@
+interface Bonus {
+
+  double calculateBonus(double salary);
+
+}
+
+
+
+class PermanentEmployee implements Bonus {
+
+  public double calculateBonus(double salary) {
+
+    return salary * 0.10;
+
+  }
+
+}
+
+
+
+class ContractEmployee implements Bonus {
+
+  public double calculateBonus(double salary) {
+
+    return salary * 0.05;
+
+  }
+
+}
+
+
+
+class Intern implements Bonus {
+
+  public double calculateBonus(double salary) {
+
+    return salary * 0.02;
+
+  }
+
+}
+
+
+
+public class BonusPayment {
+
+  public static void main(String[] args) {
+
+    Bonus emp1 = new PermanentEmployee();
+
+    Bonus emp2 = new ContractEmployee();
+
+    Bonus emp3 = new Intern();
+
+
+
+    double salary = 50000;
+
+
+
+    System.out.println("Permanent Employee Bonus: ₹" + emp1.calculateBonus(salary));
+
+    System.out.println("Contract Employee Bonus: ₹" + emp2.calculateBonus(salary));
+
+    System.out.println("Intern Bonus: ₹" + emp3.calculateBonus(salary));
+
+  }
+
+}

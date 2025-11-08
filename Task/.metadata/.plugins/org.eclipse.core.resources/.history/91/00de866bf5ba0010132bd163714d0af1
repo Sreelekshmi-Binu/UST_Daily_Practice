@@ -1,0 +1,40 @@
+package com.LibraryManagement;
+
+import java.util.ArrayList;
+
+public class Book {
+	private String name;
+	private String author;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	@Override
+	public String toString() {
+		return "Book [name=" + name + ", author=" + author + "]";
+	}
+	public static void main(String[] args) {
+		Book b = new Book();
+		Book b1 = new Book();
+		ArrayList<Book> book = new ArrayList<Book>();
+		b.setAuthor("Abc");
+		b.setName("book1");
+		book.add(b);
+		b1.setAuthor("Def");
+		b1.setName("book2");
+		book.add(b1);
+		System.out.println(book);
+		
+		
+		
+	}
+}

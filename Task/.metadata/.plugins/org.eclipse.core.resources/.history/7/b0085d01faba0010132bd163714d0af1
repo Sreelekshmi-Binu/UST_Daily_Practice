@@ -1,0 +1,62 @@
+package com.collection;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Student {
+	String name;
+	String id;
+	
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", id=" + id + "]";
+	}
+
+	public static void main(String[] args) {
+		ArrayList<Student> s = new ArrayList<Student>();
+		Scanner sc = new Scanner(System.in);
+		boolean running = true;
+		while(running ==true)
+		{
+		System.out.println("Which operation to perform: 1.add/n2.Delete./n3.View/n4.exit");
+		int op = sc.nextInt();
+		switch(op)
+		{
+		case 1: System.out.println("Enter no of students");
+		 		int num = sc.nextInt();
+		 		for(int i=0;i<num;i++)
+		 		{
+		 			Student st = new Student();
+		 			System.out.println("Enter name");
+		 			st.name = sc.next();
+		 			System.out.println("Enter id");
+		 			st.id=sc.next();
+		 			s.add(st);
+		 		}
+		 		break;
+		case 2: System.out.println("Enter the id of student");
+				String temp_id = sc.next();
+				for(int i=0;i<s.size();i++)
+				{Student st = s.get(i);
+				if(temp_id.equals(st.id))
+				{
+					s.remove(i);
+				}
+				else
+				{
+					System.out.println("Not found");
+				}
+		}
+				break;
+		case 3: System.out.println("The student details are..");
+				for(Student st:s)
+				{
+					System.out.println(st);
+				}
+				break;
+		case 4: System.out.println("Exiting...");
+		         running = false;
+	}
+	}
+}
+}

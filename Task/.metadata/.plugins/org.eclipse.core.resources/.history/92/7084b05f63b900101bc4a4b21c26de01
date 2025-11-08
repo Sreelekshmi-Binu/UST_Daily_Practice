@@ -1,0 +1,7 @@
+package com.vehicle;
+
+public class Vehicle {
+	public	void CalculateRentalCost(int days) {
+			System.out.println("The cost for renting each vehicle... for " +days);
+		}
+}

@@ -1,0 +1,12 @@
+package com.vehicle;
+
+public class Vehicle {
+	public	void CalculateRentalCost(int days) {
+			System.out.println("The Rent is.....");
+		}
+}
+
+/*
+ * A Vehicle rental system with a main class Vehicle and subclass bike, car,
+ * truck and a function CarRentalCost to calculate Rent
+ */

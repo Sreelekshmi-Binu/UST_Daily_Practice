@@ -1,0 +1,41 @@
+public class Person {
+	int age;
+	int salary;
+	String empnmae;
+	Person()
+	{
+		System.out.println("Person constructor is running....");
+	}
+	void displayDetails(int age, int salary, String empname) {
+		System.out.println("Name: "+this.empnmae);
+		System.out.println("Age " +this.age);
+		System.out.println("Salary " +this.salary);
+	}
+	class Employee extends Person
+	{
+		Employee()
+		{
+			super.displayDetails(22,35000,"Emp1");
+			System.out.println("Person constructor is running....");
+		}
+		void displayDetails(int age, int salary, String empname) {
+			System.out.println("Name: "+this.empnmae);
+			System.out.println("Age " +this.age);
+			System.out.println("Salary "+this.salary);
+		}
+	}
+	class Manager extends Employee
+	{
+		Manager()
+		{
+			super.displayDetails(22,30000,"Emp2");
+		}
+		void displayDetails(int age, int salary, String empname) {
+			System.out.println("Name: "+this.empnmae);
+			System.out.println("Age " +this.age);
+			System.out.println("Salary "+this.salary);
+			Manager m = new Manager();
+			m.displayDetails(22, 33000, "Emp3");
+	}
+	}
+}

@@ -1,0 +1,7 @@
+package com.collection;
+
+public class Book { //HashMap
+String book_name;
+String book_price;
+
+}

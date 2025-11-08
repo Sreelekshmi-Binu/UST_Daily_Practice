@@ -1,0 +1,76 @@
+package com.vehicle;
+
+import java.util.Scanner;
+
+// Base class for all vehicles
+public class Vehicle {
+    
+    public int costPerDay;
+
+    // Method to calculate rental cost, using the specific cost per day defined by subclasses
+    public void calculateRentalCost(int days) {
+        int cost = costPerDay * days;
+        System.out.println("For " + days + " days, the rental cost is " + cost + " Rs");
+    }
+}
+
+// Subclass for Truck
+class Truck extends Vehicle {
+    // Constructor for Truck, which sets the cost per day
+    public Truck() {
+        costPerDay = 500; // Cost per day for a truck
+    }
+}
+
+// Subclass for Car
+class Car extends Vehicle {
+    // Constructor for Car, which sets the cost per day
+    public Car() {
+        costPerDay = 350; // Cost per day for a car
+    }
+}
+
+// Subclass for Bike
+class Bike extends Vehicle {
+    // Constructor for Bike, which sets the cost per day
+    public Bike() {
+        costPerDay = 200; // Cost per day for a bike
+    }
+}
+
+public class VehicleRentalSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Display welcome message
+        System.out.println("...WELCOME TO RENTAL...");
+
+        // Ask the user to choose the type of vehicle
+        System.out.println("Enter the vehicle type (1 for Truck, 2 for Car, 3 for Bike): ");
+        int vehicleType = sc.nextInt();
+
+        // Ask how many days the vehicle is required
+        System.out.println("For how many days do you want the vehicle?");
+        int days = sc.nextInt();
+
+        // Create the appropriate vehicle object based on user input
+        Vehicle vehicle = null;
+        switch (vehicleType) {
+            case 1:
+                vehicle = new Truck(); // Create Truck object
+                break;
+            case 2:
+                vehicle = new Car(); // Create Car object
+                break;
+            case 3:
+                vehicle = new Bike(); // Create Bike object
+                break;
+            default:
+                System.out.println("Invalid vehicle type.");
+                System.exit(0);
+        }
+
+        // Calculate the rental cost for the chosen vehicle
+        vehicle.calculateRentalCost(days);
+    }
+}

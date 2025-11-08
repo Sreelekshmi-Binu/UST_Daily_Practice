@@ -1,0 +1,17 @@
+package com.collection;
+
+import java.util.HashMap;
+
+public class Book { //HashMap
+String book_name;
+String book_price;
+@Override
+public String toString() {
+	return "Book_name=" + book_name + ", book_price=" + book_price+"\n";
+}
+public static void main(String[] args) {
+	HashMap<Book> book = new HashMap<Book>();
+}
+
+
+}

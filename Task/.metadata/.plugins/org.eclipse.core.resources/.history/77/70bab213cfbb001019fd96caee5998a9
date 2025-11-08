@@ -1,0 +1,54 @@
+package com.college;
+
+class UniversityMember {
+    String name;
+    int id;
+
+    UniversityMember(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    void displayInfo() {
+        System.out.println("Name: " + this.name);
+        System.out.println("Id: " + this.id);
+    }
+}
+
+class Professor extends UniversityMember {
+
+    Professor(int id, String name) {
+        super(id, name);
+    }
+
+    @Override
+    void displayInfo() {
+        System.out.println("Professor Name: " + this.name);
+        System.out.println("Professor Id: " + this.id);
+    }
+}
+
+class Students extends UniversityMember {
+
+    Students(int id, String name) {
+        super(id, name);
+    }
+
+    @Override
+    void displayInfo() {
+        System.out.println("Student Name: " + this.name);
+        System.out.println("Student Id: " + this.id);
+    }
+}
+
+public class College {
+    public static void main(String[] args) {
+        UniversityMember um = new UniversityMember(101, "Student1");
+        Professor prof = new Professor(201, "Dr. Smith");
+        Students student = new Students(301, "Alice");
+
+        um.displayInfo();
+        prof.displayInfo();
+        student.displayInfo();
+    }
+}

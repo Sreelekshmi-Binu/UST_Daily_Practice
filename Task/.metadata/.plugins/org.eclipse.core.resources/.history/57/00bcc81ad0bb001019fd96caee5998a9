@@ -1,0 +1,47 @@
+package com.person;
+class Person
+{
+	Person()
+	{
+		System.out.println("Person constructor....");
+	}
+	Person(String name,int age,int salary)
+	{
+		System.out.println("Employee details are....");
+		System.out.println("Name: "+name);
+		System.out.println("Age: "+age);
+		System.out.println("Salary: "+salary);
+	}
+}
+class Employee extends Person{
+	Employee()
+	{
+		
+		System.out.println("Employee constructor...");
+	 }
+	Employee(String name,int age,int salary)
+	{   super("Emp2",22,30000);
+	System.out.println("Employee details are....");
+	System.out.println("Name: "+name);
+	System.out.println("Age: "+age);
+	System.out.println("Salary: "+salary);
+	}
+}
+
+public class Manager extends Employee{
+		Manager()
+		{
+			System.out.println("Manager constructor....");
+		}
+		Manager(String name,int age,int salary)
+		{	super("Sreelekshmi",22,35000);
+		System.out.println("Employee details are....");
+		System.out.println("Name: "+name);
+		System.out.println("Age: "+age);
+		System.out.println("Salary: "+salary);
+		}
+public static void main(String[] args) {
+	new Manager("emp3",22,30000);
+	Manager m= new Manager();
+}
+}
