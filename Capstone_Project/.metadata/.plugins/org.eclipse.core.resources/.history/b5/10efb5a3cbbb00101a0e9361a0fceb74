@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+import com.Int.ust.bean.PatientBean;
+
+public class PatientService {
+    private ArrayList<PatientBean> patients;
+
+    public PatientService() {
+        // Initialize the list of patients (In real-world, this could be fetched from a database)
+        patients = new ArrayList<>();
+        patients.add(new PatientBean("P001", "user123", "2025-11-06", "Respiratory", "Fever and chills, body aches", "Diagnosed with flu, prescribed medication"));
+        patients.add(new PatientBean("P002", "user124", "2025-11-07", "Neurological", "Severe headache, nausea, light sensitivity", "Previous history of migraines, treated with pain relievers"));
+        // Add more patients as needed
+    }
+
+    public ArrayList<PatientBean> viewAilmentDetails(String patientID) {
+        ArrayList<PatientBean> patientDetails = new ArrayList<>();
+
+        
+
+    }
+}

@@ -1,0 +1,27 @@
+package com.Int.ust.dao;
+
+import java.util.ArrayList;
+
+import com.Int.ust.bean.DoctorBean;
+import com.Int.ust.service.Administrator;
+
+public class AdministratorDao implements Administrator {
+	ArrayList<DoctorBean> db = new ArrayList<DoctorBean>();
+	@Override
+	public String add(DoctorBean doctorbean) {
+		for(DoctorBean d:db)
+		{
+			DoctorBean doctor = new DoctorBean();
+			
+			
+		
+	}
+		return null;
+	}
+@Override
+public ArrayList<DoctorBean> viewALLDoctor() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+}

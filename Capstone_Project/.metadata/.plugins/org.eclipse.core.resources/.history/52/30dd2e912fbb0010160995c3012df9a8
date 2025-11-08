@@ -1,0 +1,37 @@
+package com.Int.ust.dao;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import com.Int.ust.bean.DoctorBean;
+import com.Int.ust.service.Administrator;
+
+public class AdministratorDao implements Administrator {
+	ArrayList<DoctorBean> db = new ArrayList<DoctorBean>();
+	@Override
+	public String add(DoctorBean doctorbean) {
+		for(int i=0;i<14;i++)
+		{
+			DoctorBean doctor = new DoctorBean();
+			String id = JOptionPane.showInputDialog("UserId")
+			
+//			for(int i=0;i<num;i++)
+//	 		{
+//	 			Student st = new Student();
+//	 			System.out.println("Enter name");
+//	 			st.name = sc.next();
+//	 			System.out.println("Enter id");
+//	 			st.id=sc.next();
+//	 			s.add(st);
+		
+	}
+		return null;
+	}
+@Override
+public ArrayList<DoctorBean> viewALLDoctor() {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+}

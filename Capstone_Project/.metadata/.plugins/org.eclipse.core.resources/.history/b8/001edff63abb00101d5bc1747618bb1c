@@ -1,0 +1,96 @@
+package com.Int.ust.ui;
+
+import javax.swing.JOptionPane;
+import com.Int.ust.bean.CredentialsBean;
+import com.Int.ust.bean.DoctorBean;
+import com.Int.ust.dao.AdministratorDao;
+
+public class LoginUI {
+
+    private String Password;
+    private String User_name;
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public String getUser_name() {
+        return User_name;
+    }
+
+    public void setUser_name(String user_name) {
+        User_name = user_name;
+    }
+
+    public static void main(String[] args) {
+        boolean running = true;
+
+        // Main loop for continuous login attempts until the user chooses to exit
+        while (running) {
+            String userName = JOptionPane.showInputDialog("Enter Username:");
+            String password = JOptionPane.showInputDialog("Enter Password:");
+            CredentialsBean cb = new CredentialsBean();
+
+            // Check if credentials are valid
+            if (cb.isValidCredentials(userName, password)) {
+                JOptionPane.showMessageDialog(null, "Login Successful!");
+                String role = getUserRole(userName); // Get the user role based on the username
+
+                // Handle different roles based on the user
+                switch (role) {
+                    case "Add":
+                        AdministratorDao ad = new AdministratorDao();
+                        ad.addDoctor();
+                        break;
+                    case "View":
+                    	if (db != null && !doctors.isEmpty()) {
+                            for (DoctorBean doctor : db) {
+                                System.out.println(doctor.toString()); // Print doctor details
+                            }
+                        } else {
+                            System.out.println("No doctors available.");
+                        }
+                        break;
+                    case "Modify":
+                        // Implement Modify functionality if needed
+                        break;
+                    case "Delete":
+                        // Implement Delete functionality if needed
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "No Permissions for this role.");
+                }
+
+                // Ask the user if they want to log in again after completing actions
+                int choice = JOptionPane.showConfirmDialog(null, "Do you want to log in again?", "Continue", JOptionPane.YES_NO_OPTION);
+                if (choice == JOptionPane.NO_OPTION) {
+                    running = false; // Exit loop if NO is selected
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+                break;
+            }
+        }
+    }
+
+    // Method to determine the role based on the username
+    public static String getUserRole(String userName) {
+        switch (userName) {
+            case "AD-001":
+                return "Add";
+            case "AD-002":
+                return "View";
+            case "AD-003":
+                return "Modify";
+            case "AD-004":
+                return "Delete";
+            default:
+                return "No Permissions";
+        }
+    }
+}

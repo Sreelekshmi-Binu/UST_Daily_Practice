@@ -1,0 +1,5 @@
+package com.Int.ust.service;
+
+public interface User {
+
+}

@@ -1,0 +1,28 @@
+//import java.util.ArrayList;
+//
+//import com.Int.ust.bean.PatientBean;
+//
+//public class PatientService {
+//    private ArrayList<PatientBean> patients;
+//
+//    public PatientService() {
+//        // Initialize the list of patients (In real-world, this could be fetched from a database)
+//        patients = new ArrayList<>();
+//        patients.add(new PatientBean("P001", "John Doe", "Fever", "Flu"));
+//        patients.add(new PatientBean("P002", "Jane Smith", "Headache", "Migraine"));
+//        // Add more patients as needed
+//    }
+//
+//    public ArrayList<PatientBean> viewAilmentDetails(String patientID) {
+//        ArrayList<PatientBean> patientDetails = new ArrayList<>();
+//
+//        // Iterate over the list of patients and match the given patientID
+//        for (PatientBean patient : patients) {
+//            if (patient.getPatientID().equals(patientID)) {
+//                patientDetails.add(patient);
+//            }
+//        }
+//
+//        return patientDetails;  // Return the list of matching patients' ailment details
+//    }
+//}

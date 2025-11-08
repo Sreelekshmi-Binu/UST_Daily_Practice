@@ -1,0 +1,80 @@
+package com.Int.ust.dao;
+
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import com.Int.ust.bean.DoctorBean;
+import com.Int.ust.service.Administrator;
+
+public class AdministratorDao implements Administrator {
+    
+    // ArrayList to store doctor records
+    public static ArrayList<DoctorBean> db = new ArrayList<DoctorBean>();
+    //
+    
+    // Constructor to initialize with some predefined doctors
+    public AdministratorDao() {
+        // Adding sample doctors to the list
+       
+        //db.add(new DoctorBean("D002", "Dr. Jane Smith", "02/02/1985", "01/01/2015", "Female", "MD", "Neurology", 8, "Street 2", "Location 2", "City 2", "State 2", "10002", "0987654321", "jane.smith@example.com"));
+        //db.add(new DoctorBean("D003", "Dr. Mike Brown", "05/05/1975", "01/01/2005", "Male", "MBBS", "Orthopedics", 15, "Street 3", "Location 3", "City 3", "State 3", "10003", "1122334455", "mike.brown@example.com"));
+    }
+
+    // Method to add a doctor to the list
+    @Override
+    public String add(DoctorBean doctorbean) {
+        
+        String doctorID = JOptionPane.showInputDialog("Enter Doctor ID:");
+        String doctorName = JOptionPane.showInputDialog("Enter Doctor Name:");
+        String gender = JOptionPane.showInputDialog("Enter Doctor Gender (Male/Female/Other):");
+        String qualification = JOptionPane.showInputDialog("Enter Doctor Qualification:");
+        String specialization = JOptionPane.showInputDialog("Enter Doctor Specialization:");
+        String street = JOptionPane.showInputDialog("Enter Doctor Street:");
+        String location = JOptionPane.showInputDialog("Enter Doctor Location:");
+        String city = JOptionPane.showInputDialog("Enter Doctor City:");
+        String state = JOptionPane.showInputDialog("Enter Doctor State:");
+        String pincode = JOptionPane.showInputDialog("Enter Doctor Pincode:");
+        String contactNumber = JOptionPane.showInputDialog("Enter Doctor Contact Number:");
+        String emailID = JOptionPane.showInputDialog("Enter Doctor Email ID:");
+        int yearsOfExperience = Integer.parseInt(JOptionPane.showInputDialog("Enter Doctor Years of Experience:"));
+        String dob = JOptionPane.showInputDialog("Enter Doctor Date of Birth (dd/MM/yyyy):");
+        String doj = JOptionPane.showInputDialog("Enter Doctor Date of Joining (dd/MM/yyyy):");
+
+        // Create new doctor and add to the list
+        DoctorBean newDoctor = new DoctorBean(
+        	    doctorID, doctorName, dob, doj, gender, qualification, specialization, 
+        	    yearsOfExperience, street, location, city, state, pincode, contactNumber, emailID
+        	);
+        db.add(newDoctor);
+		return "SUCESSS";
+		
+    }
+
+                @Override
+                public ArrayList<DoctorBean> viewALLDoctor() {
+                    // If there are doctors in the list, display them
+                    if (db != null && !db.isEmpty()) {
+                        for (DoctorBean doctor : db) {
+                           
+                            System.out.println(doctor);
+                        	
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No doctors available.");
+                    }
+                    return db;  // Return the entire list of doctors
+                }
+
+				public int removeDoctor(String doctorID) {
+					for(DoctorBean doctor:db)
+					{
+					
+					if(doctor.getDoctorID().equals(doctorID))
+					{
+						db.remove(doctor);
+					}
+				}
+					return 1;
+
+				}
+                
+    }

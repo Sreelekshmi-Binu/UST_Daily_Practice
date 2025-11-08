@@ -1,0 +1,13 @@
+package com.Int.ust.bean;
+
+import com.Int.ust.service.Administrator;
+
+public class AdministratorBean implements Administrator{
+
+	@Override
+	public String add(DoctorBean doctorbean) {
+		for(
+		return null;
+	}
+	
+}

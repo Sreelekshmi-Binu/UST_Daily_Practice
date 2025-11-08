@@ -1,0 +1,76 @@
+package com.Int.ust.ui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+import com.Int.ust.bean.CredentialsBean;
+
+public class LoginUI {
+	private String Password;
+	private String User_name;
+	
+		public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public String getUser_name() {
+		return User_name;
+	}
+
+	public void setUser_name(String user_name) {
+		User_name = user_name;
+	}
+
+		public static void main(String[] args) {
+			
+		boolean running =true;
+		String role ="";
+		while(running)
+		{
+		JButton loginbutton = new JButton("Login");
+		loginbutton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				String userName = JOptionPane.showInputDialog( "Enter Username:");
+                String password = JOptionPane.showInputDialog( "Enter Password:");
+                CredentialsBean cb = new  CredentialsBean();
+                if (cb.isValidCredentials(userName, password)) {
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+                    role = getUserRole(userName);
+                }
+                 else 
+                 {
+                        JOptionPane.showMessageDialog(null,"Invalid Username or Password");
+			}  
+                }
+}
+		 public static String getUserRole(String userName) {
+             switch (userName) {
+                 case "AD-001":
+                     return "Add"; 
+                 case "AD-002":
+                     return "View"; 
+                 case "AD-003":
+                     return "Modify"; 
+                 case "AD-004":
+                     return "Delete"; 
+                 default:
+                     return "No Permissions"; 
+             }
+		 }
+             switch(role)
+             {
+             case "Add": String result = admin.add(newDoctor);  
+             			JOptionPane.showMessageDialog(null, result);
+             }
+}
+}

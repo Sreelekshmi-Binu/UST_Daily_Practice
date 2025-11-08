@@ -1,0 +1,7 @@
+package com.Int.ust.service;
+
+import com.Int.ust.bean.DoctorBean;
+
+public interface Administrator {
+		String add(DoctorBean doctorbean);
+}

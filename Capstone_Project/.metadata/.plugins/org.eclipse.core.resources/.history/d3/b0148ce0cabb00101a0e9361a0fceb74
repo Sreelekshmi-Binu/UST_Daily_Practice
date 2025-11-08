@@ -1,0 +1,8 @@
+package com.Int.ust.service;
+
+import com.Int.ust.bean.CredentialsBean;
+
+public class User {
+	String login(CredentialsBean credentialsBean);
+
+}

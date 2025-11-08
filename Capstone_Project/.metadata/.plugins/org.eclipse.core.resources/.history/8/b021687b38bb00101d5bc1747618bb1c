@@ -1,0 +1,91 @@
+package com.Int.ust.ui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import com.Int.ust.bean.CredentialsBean;
+import com.Int.ust.dao.AdministratorDao;
+
+public class LoginUI {
+
+    private String Password;
+    private String User_name;
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public String getUser_name() {
+        return User_name;
+    }
+
+    public void setUser_name(String user_name) {
+        User_name = user_name;
+    }
+
+    public static void main(String[] args) {
+        boolean running = true;
+
+        while(running) {
+            // Prompt for username and password directly
+            String userName = JOptionPane.showInputDialog("Enter Username:");
+            String password = JOptionPane.showInputDialog("Enter Password:");
+            CredentialsBean cb = new CredentialsBean();
+
+            // Check if credentials are valid
+            if (cb.isValidCredentials(userName, password)) {
+                JOptionPane.showMessageDialog(null, "Login Successful!");
+                String role = getUserRole(userName); 
+
+                // Perform role-based actions
+                switch (role) {
+                    case "Add":
+                        AdministratorDao ad = new AdministratorDao();
+                        ad.addDoctor();  // Call addDoctor() method for Add role
+                        break;
+                    case "View":
+                        AdministratorDao viewDao = new AdministratorDao();
+                        viewDao.viewALLDoctor();  // Call viewALLDoctor() for View role
+                        break;
+                    case "Modify":
+                        // Implement Modify action here if needed
+                        break;
+                    case "Delete":
+                        // Implement Delete action here if needed
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "No Permissions for this role.");
+                }
+
+                // Ask if the user wants to log in again
+                int choice = JOptionPane.showConfirmDialog(null, "Do you want to log in again?", "Continue", JOptionPane.YES_NO_OPTION);
+                if (choice == JOptionPane.NO_OPTION) {
+                    running = false;  // Exit loop if NO is chosen
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+            }
+        }
+    }
+
+    // Method to determine the role based on the username
+    public static String getUserRole(String userName) {
+        switch (userName) {
+            case "AD-001":
+                return "Add"; 
+            case "AD-002":
+                return "View"; 
+            case "AD-003":
+                return "Modify"; 
+            case "AD-004":
+                return "Delete"; 
+            default:
+                return "No Permissions"; 
+        }
+    }
+}

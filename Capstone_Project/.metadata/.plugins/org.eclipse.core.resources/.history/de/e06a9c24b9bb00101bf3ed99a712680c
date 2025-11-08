@@ -1,0 +1,11 @@
+package com.Int.ust.service;
+
+import java.util.ArrayList;
+
+import com.Int.ust.bean.DoctorBean;
+
+public interface Administrator {
+		public String add(DoctorBean doctorbean);
+		public ArrayList<DoctorBean> viewALLDoctor();
+		int removeDoctor(String doctorID);
+}

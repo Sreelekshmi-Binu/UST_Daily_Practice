@@ -1,0 +1,63 @@
+package com.Int.ust.dao;
+
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import com.Int.ust.bean.DoctorBean;
+import com.Int.ust.service.Administrator;
+
+public class AdministratorDao implements Administrator {
+	ArrayList<DoctorBean> db = new ArrayList<DoctorBean>();
+		 public void addDoctor() {
+			 String doctorID = JOptionPane.showInputDialog("Enter Doctor ID:");
+		        String doctorName = JOptionPane.showInputDialog("Enter Doctor Name:");
+		        String gender = JOptionPane.showInputDialog("Enter Doctor Gender (Male/Female/Other):");
+		        String qualification = JOptionPane.showInputDialog("Enter Doctor Qualification:");
+		        String specialization = JOptionPane.showInputDialog("Enter Doctor Specialization:");
+		        String street = JOptionPane.showInputDialog("Enter Doctor Street:");
+		        String location = JOptionPane.showInputDialog("Enter Doctor Location:");
+		        String city = JOptionPane.showInputDialog("Enter Doctor City:");
+		        String state = JOptionPane.showInputDialog("Enter Doctor State:");
+		        String pincode = JOptionPane.showInputDialog("Enter Doctor Pincode:");
+		        String contactNumber = JOptionPane.showInputDialog("Enter Doctor Contact Number:");
+		        String emailID = JOptionPane.showInputDialog("Enter Doctor Email ID:");
+		        int yearsOfExperience = Integer.parseInt(JOptionPane.showInputDialog("Enter Doctor Years of Experience:"));
+		        String dobString = JOptionPane.showInputDialog("Enter Doctor Date of Birth (dd/MM/yyyy):");
+		        String dojString = JOptionPane.showInputDialog("Enter Doctor Date of Joining (dd/MM/yyyy):");
+		        Date dateOfBirth = parseDate(dobString);
+		        Date dateOfJoining = parseDate(dojString); 
+		        DoctorBean newDoctor = new DoctorBean(
+		                doctorID, doctorName, dateOfBirth, dateOfJoining, gender, qualification, specialization, 
+		                yearsOfExperience, street, location, city, state, pincode, contactNumber, emailID);
+		        String result = add(newDoctor);  
+		        JOptionPane.showMessageDialog(null, result);
+		 }
+		 
+		 @Override
+		 public String add(DoctorBean doctorbean) {
+		 	 if (doctorbean != null) {
+		 		db.add(doctorbean);  
+		            return "Doctor Added Successfully!";
+		        } else {
+		            return "Failed to Add Doctor!";
+		        }
+	}
+@Override
+public ArrayList<DoctorBean> viewALLDoctor() {
+	
+	return db;
+}
+public Date parseDate(String dateString) {
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // Date format to expect
+    try {
+        // If the format matches, return the parsed date
+        return sdf.parse(dateString);
+    } catch (Exception e) {
+        // If parsing fails, return null or a default date
+        return null;
+    }
+
+}

@@ -1,0 +1,88 @@
+package com.Int.ust.ui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
+import com.Int.ust.bean.CredentialsBean;
+import com.Int.ust.dao.AdministratorDao;
+
+public class LoginUI {
+
+    private String Password;
+    private String User_name;
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
+    public String getUser_name() {
+        return User_name;
+    }
+
+    public void setUser_name(String user_name) {
+        User_name = user_name;
+    }
+
+    public static void main(String[] args) {
+    	boolean running = true;
+    	while(running) {
+        JButton loginbutton = new JButton("Login");
+        loginbutton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String userName = JOptionPane.showInputDialog("Enter Username:");
+                String password = JOptionPane.showInputDialog("Enter Password:");
+                CredentialsBean cb = new CredentialsBean();
+                if (cb.isValidCredentials(userName, password)) {
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+                    String role = getUserRole(userName); 
+
+                    
+                    switch (role) {
+                        case "Add":
+                            AdministratorDao ad = new AdministratorDao();
+                            ad.addDoctor();
+                            break;
+                        case "View":
+                            AdministratorDao viewDao = new AdministratorDao();
+                            viewDao.viewALLDoctor();
+                            break;
+                        case "Modify":
+                            break;
+                        case "Delete":
+                            break;
+                        default:
+                            JOptionPane.showMessageDialog(null, "No Permissions for this role.");
+                    }
+                    int choice = JOptionPane.showConfirmDialog(null, "Do you want to log in again?", "Continue", JOptionPane.YES_NO_OPTION);
+                    if (choice == JOptionPane.NO_OPTION) {
+                        running = false; 
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+                }
+            }
+        });
+    public static String getUserRole(String userName) {
+        switch (userName) {
+            case "AD-001":
+                return "Add"; 
+            case "AD-002":
+                return "View"; 
+            case "AD-003":
+                return "Modify"; 
+            case "AD-004":
+                return "Delete"; 
+            default:
+                return "No Permissions"; 
+        }
+    }
+}
+    
