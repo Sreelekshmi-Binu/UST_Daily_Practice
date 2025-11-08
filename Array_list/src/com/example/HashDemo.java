@@ -17,7 +17,7 @@ public static void main(String[] args) {
 //	Iterator it = al.iterator();
 //while(it.hasNext())
 //{
-	System.out.println(it.next());
+	//System.out.println(al.next());
 //}
 al.forEach(x->{System.out.println(x);});
 al.forEach(System.out::println);//method reference
