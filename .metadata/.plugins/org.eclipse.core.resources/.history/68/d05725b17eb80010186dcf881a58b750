@@ -1,5 +1,0 @@
-package com.demo;
-
-public class Birds {
-public void fly();
-public void eat();}

@@ -1,9 +1,0 @@
-package com.Int.ust.ui;
-
-import javax.swing.*;
-
-public class LoginUI {
-public static void main(String[] args) {
-	int Id=JOptionPane.showInputDialog("Enter Username");
-}
-}
